@@ -4,7 +4,7 @@ import { Button, TextField, Container, Typography, Grid, Card, CardContent, Icon
 import { Delete } from '@mui/icons-material';
 import { Box } from '@mui/material';
 
-const API_BASE_URL = "http://74.249.169.153:8000/api";
+const API_BASE_URL = "/api";
 // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 // console.log("API:", process.env.REACT_APP_API_BASE_URL);
 // console.log("API BASE URL:", API_BASE_URL);
@@ -138,12 +138,12 @@ function TodoApp() {
                     </Typography>
 
                     {tasks.map((task) => (
-                        <Box key={task.ID} mb={2}>
-                            <Card key={task.ID} variant="elevation">
+                        <Box key={task.id} mb={2}>
+                            <Card key={task.id} variant="elevation">
                                 <CardContent>
-                                    <Typography variant="h6">{task.Title}</Typography>
-                                    <Typography variant="body2">{task.Description}</Typography>
-                                    <IconButton onClick={() => deleteTask(task.ID)} color="secondary">
+                                    <Typography variant="h6">{task.title}</Typography>
+                                    <Typography variant="body2">{task.description}</Typography>
+                                    <IconButton onClick={() => deleteTask(task.id)} color="secondary">
                                         <Delete />
                                     </IconButton>
                                 </CardContent>
